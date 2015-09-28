@@ -1,0 +1,31 @@
+20150928 095806.231 [04748] Sauce Connect 4.3.11, build 1759 ac239f8
+20150928 095806.231 [04748] Error, no user specified.
+20150928 100337.666 [06984] Sauce Connect 4.3.11, build 1759 ac239f8
+20150928 100337.666 [06984] Trying to autodetect proxy settings
+20150928 100337.676 [06984] Starting up; pid 6984
+20150928 100337.676 [06984] Command line arguments: sc -u minhqa -k ****
+20150928 100337.686 [06984] Using no proxy for connecting to Sauce Labs REST API.
+20150928 100337.916 [06984] Resolving saucelabs.com to 162.222.73.28 took 230 ms.
+20150928 100349.681 [06984] PROXY *** scproxy started ***
+20150928 100349.681 [06984] PROXY found DNS server 192.168.190.45
+20150928 100349.681 [06984] PROXY found DNS server 192.168.190.20
+20150928 100349.984 [06984] Started scproxy on port 53712.
+20150928 100349.984 [06984] Please wait for 'you may start your tests' to start your tests.
+20150928 100349.984 [06984] Starting secure remote tunnel VM...
+20150928 100356.707 [06984] Secure remote tunnel VM provisioned.
+20150928 100356.717 [06984] Tunnel ID: 2899f4c561244682827a75508437d5cc
+20150928 100357.583 [06984] Secure remote tunnel VM is now: booting
+20150928 100359.414 [06984] Secure remote tunnel VM is now: running
+20150928 100359.424 [06984] Remote tunnel host is: maki81090.miso.saucelabs.com
+20150928 100359.424 [06984] Using no proxy for connecting to tunnel VM.
+20150928 100359.644 [06984] Resolving tunnel hostname to 162.222.75.7 took 220ms.
+20150928 100359.654 [06984] Starting Selenium listener...
+20150928 100359.654 [06984] Establishing secure TLS connection to tunnel...
+20150928 100359.664 [06984] [EVDNS] Added nameserver 192.168.190.45:53 as 00E82538
+20150928 100359.664 [06984] [EVDNS] Added nameserver 192.168.190.20:53 as 00E82750
+20150928 100359.664 [06984] Selenium listener started on port 4445.
+20150928 100359.964 [06984] MAIN connecting to KGP server maki81090.miso.saucelabs.com took 300 ms
+20150928 100359.974 [06984] MAIN warning, failed to set KGP bufferevent priority to 0
+20150928 100404.385 [06984] MAIN connecting to KGP server maki81090.miso.saucelabs.com took 190 ms
+20150928 100404.395 [06984] MAIN warning, failed to set KGP bufferevent priority to 0
+20150928 100407.884 [06984] Sauce Connect is up, you may start your tests.

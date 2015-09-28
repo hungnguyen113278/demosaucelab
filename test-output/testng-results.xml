@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Bloomboard" duration-ms="7473" started-at="2015-09-28T07:22:06Z" finished-at="2015-09-28T07:22:13Z">
+    <groups>
+    </groups>
+    <test name="Run on chrome 2" duration-ms="6511" started-at="2015-09-28T07:22:06Z" finished-at="2015-09-28T07:22:12Z">
+      <class name="testcase.testng2">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.testng2@142022d]" name="setup" is-config="true" duration-ms="4102" started-at="2015-09-28T14:22:06Z" finished-at="2015-09-28T14:22:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test()[pri:0, instance:testcase.testng2@142022d]" name="test" duration-ms="2108" started-at="2015-09-28T14:22:10Z" description="Verify Resources Recommendations displays on Goals page" finished-at="2015-09-28T14:22:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcase.testng2@142022d]" name="tearDown" is-config="true" duration-ms="275" started-at="2015-09-28T14:22:12Z" finished-at="2015-09-28T14:22:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testcase.testng2 -->
+    </test> <!-- Run on chrome 2 -->
+    <test name="Run on chrome 1" duration-ms="7473" started-at="2015-09-28T07:22:06Z" finished-at="2015-09-28T07:22:13Z">
+      <class name="testcase.testng">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testcase.testng@1f0c45f]" name="setup" is-config="true" duration-ms="6977" started-at="2015-09-28T14:22:06Z" finished-at="2015-09-28T14:22:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test()[pri:0, instance:testcase.testng@1f0c45f]" name="test" duration-ms="219" started-at="2015-09-28T14:22:13Z" description="Verify Resources Recommendations displays on Goals page" finished-at="2015-09-28T14:22:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcase.testng@1f0c45f]" name="tearDown" is-config="true" duration-ms="269" started-at="2015-09-28T14:22:13Z" finished-at="2015-09-28T14:22:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testcase.testng -->
+    </test> <!-- Run on chrome 1 -->
+  </suite> <!-- Bloomboard -->
+</testng-results>
