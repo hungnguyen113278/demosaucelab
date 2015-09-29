@@ -2,32 +2,30 @@ dependencies:
   post:
     - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
     - tar -xzf sc-latest-linux.tar.gz
-
+	
+## Customize the test machine
 machine:
+  # Version of java to use
   java:
-    version: oraclejdk8
-  node:
-    version: 0.10.28
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
-dependencies:
-  override:
-    - ant resolve -Divy.useCacheOnly=false
-  cache_directories:
-    - ~/.ivycache-usrz
-test:
-  override:
-    - ant test -Divy.useCacheOnly=true
+    version: oraclejdk7
 
-deployment:
-  release:
-    branch: release
-    commands:
-      - ant publish
-          -Dtest.skip=true
-          -Divy.useCacheOnly=true
-          -Divy.buildNumber="${8}"
-      - bash ./build/repository.sh
-	  
+## Customize test commands
+test:
+  pre:
+    - git clone https://github.com/hungnguyen113278/demosaucelab.git
+    - cp demosaucelab/build.sh ./build.sh
+    - cp demosaucelab/bin/run.xml ./run.xml
+	
+  override:
+    - cd sc-*-linux && ./bin/sc -u bloomboardteam -k 16f8214b-9950-4806-9550-44bda997c6a6:
+        background: true
+    - python -m hello.hello_app:
+        background: true
+    - sleep 60
+    - nosetests
+    - sh build.sh
+
+notify:
+  webhooks:
+    - url: http://cs3134-jarvis.meteor.com/webhook/ci
+  
