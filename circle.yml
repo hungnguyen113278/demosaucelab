@@ -5,7 +5,7 @@ dependencies:
 
 test:
   override:
-    - cd sc-*-linux && ./bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY:
+    - cd sc-*-linux && ./bin/sc -u bloomboardteam -k 16f8214b-9950-4806-9550-44bda997c6a6:
         background: true
     - python -m hello.hello_app:
         background: true
