@@ -3,11 +3,33 @@ dependencies:
     - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
     - tar -xzf sc-latest-linux.tar.gz
 
+machine:
+  java:
+    version: oraclejdk8
+  node:
+    version: 0.10.28
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+dependencies:
+  override:
+    - ant resolve -Divy.useCacheOnly=false
+  cache_directories:
+    - ~/.ivycache-usrz
 test:
   override:
-    - cd sc-*-linux && ./bin/sc -u bloomboardteam -k 16f8214b-9950-4806-9550-44bda997c6a6:
+  cd sc-*-linux && ./bin/sc -u bloomboardteam -k 16f8214b-9950-4806-9550-44bda997c6a6:
         background: true
-    - python -m hello.hello_app:
-        background: true
-    - sleep 60
-    - nosetests
+    - ant test -Divy.useCacheOnly=true
+
+deployment:
+  release:
+    branch: release
+    commands:
+      - ant publish
+          -Dtest.skip=true
+          -Divy.useCacheOnly=true
+          -Divy.buildNumber="${8}"
+      - bash ./build/repository.sh
+	  

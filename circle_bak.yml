@@ -1,0 +1,13 @@
+dependencies:
+  post:
+    - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
+    - tar -xzf sc-latest-linux.tar.gz
+
+test:
+  override:
+    - cd sc-*-linux && ./bin/sc -u bloomboardteam -k 16f8214b-9950-4806-9550-44bda997c6a6:
+        background: true
+    - python -m hello.hello_app:
+        background: true
+    - sleep 60
+    - nosetests
