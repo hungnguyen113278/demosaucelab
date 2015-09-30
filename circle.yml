@@ -12,5 +12,5 @@ test:
     - while [ ! -e ~/sauce_is_ready ]; do sleep 1; done
     - cp src/testcase/test.java ./test.java
     - javac -classpath .:lib/* test.java
- post:
+  post:
     - killall --wait sc  # wait for Sauce Connect to close the tunnel
