@@ -11,7 +11,6 @@ test:
     - cd sc-*-linux && ./bin/sc --user minhqa --api-key fbfbb9a7-f698-4210-b246-c2305fb9bcec --readyfile ~/sauce_is_ready:
         background: true
     - while [ ! -e ~/sauce_is_ready ]; do sleep 1; done
-    - cp src/run.xml ./run.xml
-    - javac -classname src/run.xml
+    - javac -classname .:src/* run.xml
   post:
     - killall --wait sc  # wait for Sauce Connect to close the tunnel
