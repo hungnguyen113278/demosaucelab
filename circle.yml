@@ -2,11 +2,15 @@ dependencies:
   post:
     - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
     - tar -xzf sc-latest-linux.tar.gz
+    - wget http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar
+    - java -jar selenium-server-standalone-2.47.1.jar:
+        background: true
 
 test:
   override:
     - cd sc-*-linux && ./bin/sc -u $bloomboardteam -k $16f8214b-9950-4806-9550-44bda997c6a6:
-        background: true
-    - ./testng.java
-    - sleep 60
-    - nosetests
+    - while [ ! -e ~/sauce_is_ready ]; do sleep 1; done
+    - cp src/testcase/test.java ./test.java
+    - javac -classpath .:lib/* test.java
+ post:
+    - killall --wait sc  # wait for Sauce Connect to close the tunnel	
