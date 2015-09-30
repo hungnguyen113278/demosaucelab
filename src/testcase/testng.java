@@ -24,7 +24,8 @@ public class testng{
         caps.setCapability("name", "Web Driver demo Test");
 	    try {
 			driver = new RemoteWebDriver(new URL(URL), caps);
-			 driver.get("https://translate.google.com");
+			driver.get("https://translate.google.com");
+			System.out.println("Hung test");
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
