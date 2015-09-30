@@ -8,7 +8,7 @@ dependencies:
 
 test:
   override:
-    - cd sc-*-linux && ./bin/sc -u $bloomboardteam -k $16f8214b-9950-4806-9550-44bda997c6a6:
+    - cd sc-*-linux && ./bin/sc --user minhqa --api-key fbfbb9a7-f698-4210-b246-c2305fb9bcec --readyfile ~/sauce_is_ready:
     - while [ ! -e ~/sauce_is_ready ]; do sleep 1; done
     - cp src/testcase/test.java ./test.java
     - javac -classpath .:lib/* test.java
