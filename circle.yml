@@ -1,21 +1,22 @@
-dependencies:
-  post:
-    - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
-    - tar -xzf sc-latest-linux.tar.gz
 ## Customize the test machine
 machine:
-  # Version of java to use
-  java:
-    version: oraclejdk7
-## Customize test commands
+    environment:
+        SAUCEUSER: [bloomboardteam]
+        SAUCEKEY: [16f8214b-9950-4806-9550-44bda997c6a6]
+
+dependencies:
+    post:
+        - wget https://d2nkw87yt5k0to.cloudfront.net/downloads/sc-latest-linux.tar.gz && tar -xvf sc-latest-linux.tar.gz
+
 test:
-  pre:
-    - git clone https://github.com/hungnguyen113278/demosaucelab.git
-    - cp demosaucelab/build.sh ./build.sh
-    - cp demosaucelab/bin/run.xml ./run.xml
-  override:
-    - sh build.sh
-notify:
-  webhooks:
-    - url: http://cs3134-jarvis.meteor.com/webhook/ci
- 
+    override:
+        # Start Sauce Connect
+        - cd sc-*-linux && ./bin/sc -u ${SAUCEUSER} -k ${SAUCEKEY}:
+            background: true
+
+        # Start whatever server you need here
+        # - [SOME COMMAND HERE]:
+        #    background: true
+        
+        # Run tests, after waiting for server to start
+        - build.sh
