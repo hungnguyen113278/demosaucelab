@@ -19,4 +19,4 @@ test:
         #    background: true
         
         # Run tests, after waiting for server to start
-        - build.sh
+        - sh build.sh
