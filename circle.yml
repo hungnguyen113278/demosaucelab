@@ -6,8 +6,8 @@ machine:
 
 dependencies:
     post:
-        - wget https://d2nkw87yt5k0to.cloudfront.net/downloads/sc-latest-linux.tar.gz && tar -xvf sc-latest-linux.tar.gz
-
+        - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz && tar
+        - tar -xzf sc-latest-linux.tar.gz
 test:
     override:
         # Start Sauce Connect
