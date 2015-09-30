@@ -13,4 +13,4 @@ test:
     - cp src/testcase/test.java ./test.java
     - javac -classpath .:lib/* test.java
  post:
-    - killall --wait sc  # wait for Sauce Connect to close the tunnel	
+    - killall --wait sc  # wait for Sauce Connect to close the tunnel
