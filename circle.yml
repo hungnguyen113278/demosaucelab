@@ -1,8 +1,8 @@
 ## Customize the test machine
 machine:
     environment:
-        SAUCEUSER: [bloomboardteam]
-        SAUCEKEY: [16f8214b-9950-4806-9550-44bda997c6a6]
+        SAUCEUSER: bloomboardteam
+        SAUCEKEY: 16f8214b-9950-4806-9550-44bda997c6a6
 
 dependencies:
     post:
