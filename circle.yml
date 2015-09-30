@@ -2,24 +2,20 @@ dependencies:
   post:
     - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
     - tar -xzf sc-latest-linux.tar.gz
-	
 ## Customize the test machine
 machine:
   # Version of java to use
   java:
     version: oraclejdk7
-
 ## Customize test commands
 test:
   pre:
     - git clone https://github.com/hungnguyen113278/demosaucelab.git
     - cp demosaucelab/build.sh ./build.sh
     - cp demosaucelab/bin/run.xml ./run.xml
-	
   override:
     - sh build.sh
-
 notify:
   webhooks:
     - url: http://cs3134-jarvis.meteor.com/webhook/ci
-  
+ 
