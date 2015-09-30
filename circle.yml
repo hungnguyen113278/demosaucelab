@@ -1,22 +1,12 @@
-## Customize the test machine
-machine:
-    environment:
-        SAUCEUSER: bloomboardteam
-        SAUCEKEY: 16f8214b-9950-4806-9550-44bda997c6a6
-
 dependencies:
-    post:
-        - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
-        - tar -xzf sc-latest-linux.tar.gz
-test:
-    override:
-        # Start Sauce Connect
-        - cd sc-*-linux && ./bin/sc -u ${SAUCEUSER} -k ${SAUCEKEY}:
-            background: true
+  post:
+    - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
+    - tar -xzf sc-latest-linux.tar.gz
 
-        # Start whatever server you need here
-        # - [SOME COMMAND HERE]:
-        #    background: true
-        
-        # Run tests, after waiting for server to start
-        - sh build.sh
+test:
+  override:
+    - cd sc-*-linux && ./bin/sc -u $bloomboardteam -k $16f8214b-9950-4806-9550-44bda997c6a6:
+        background: true
+    - ./testng.sh
+    - sleep 60
+    - nosetests
